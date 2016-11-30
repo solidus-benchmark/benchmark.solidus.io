@@ -1,0 +1,76 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+<style>
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<a href="/">« all benchmarks</a>
+
+<h1>order/update/cart_with_1_items/cold</h1>
+
+<p>This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.</p>
+
+<canvas id="chart" width="400" height="200"></canvas>
+
+<h3>Notes</h3><ul><li>As of Solidus 2.1, taxes are calculated as part of every order.update!</li></ul>
+
+<script>
+var ctx = document.getElementById("chart");
+
+var data = {"labels":["1.0.6","1.1.3","1.2.2","1.3.1","1.4.0","2.0.0","2.1.0.alpha"],"datasets":[{"label":"Mysql2","backgroundColor":"#e48e00","data":[14.548987860867191,14.541465062160738,14.43815556749358,7.209878222297566,5.252968632917413,6.776190531972625,9.399959524302162],"fullData":[{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.0.6","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.014548987860867191,"iterations":344,"stddev":0.002325043329370376,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.1.3","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.014541465062160738,"iterations":344,"stddev":0.0020940638495200088,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.2.2","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.01443815556749358,"iterations":347,"stddev":0.0024930730442115343,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.3.1","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.007209878222297566,"iterations":694,"stddev":0.0008594379333716593,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.4.0","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.005252968632917413,"iterations":952,"stddev":0.0008593080114024826,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"2.0.0","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"Mysql2","mean":0.0067761905319726244,"iterations":738,"stddev":0.0009316790640460103,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"2.1.0.alpha","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"Mysql2","mean":0.009399959524302162,"iterations":532,"stddev":0.0010916404245088745,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]}]},{"label":"PostgreSQL","backgroundColor":"#336791","data":[10.428213762740295,10.422905039740726,10.393210052014076,7.119718648938417,5.34683446206837,6.70538796548889,9.639277485394869],"fullData":[{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.0.6","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.010428213762740295,"iterations":480,"stddev":0.0013436153542487695,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.1.3","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.010422905039740726,"iterations":480,"stddev":0.0013974796751755946,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.2.2","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.010393210052014077,"iterations":482,"stddev":0.0013955007661444502,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.3.1","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.0071197186489384175,"iterations":703,"stddev":0.0008374844068437524,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"1.4.0","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.00534683446206837,"iterations":936,"stddev":0.0007910488348715514,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"2.0.0","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"PostgreSQL","mean":0.0067053879654888895,"iterations":746,"stddev":0.0009285528841628682,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]},{"label":"order/update/cart_with_1_items/cold","solidus_version":"2.1.0.alpha","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"PostgreSQL","mean":0.009639277485394868,"iterations":519,"stddev":0.0010782191674277599,"description":"This benchmark measures the speed of `Order#update!` for an order with 1 items. This test reloads the order from memory before each update.","notes":["As of Solidus 2.1, taxes are calculated as part of every order.update!"]}]}]};
+
+var options = {
+  scales: {
+    yAxes: [{
+      display: true,
+      ticks: {
+        beginAtZero: true
+      },
+      scaleLabel: {
+        display: true,
+        labelString: "milliseconds"
+      }
+    }]
+  },
+
+  tooltips: {
+    callbacks: {
+      title: function (tooltipItem, data) {
+        var measurement = data.datasets[tooltipItem[0].datasetIndex].fullData[tooltipItem[0].index];
+        return ["Solidus " + measurement.solidus_version, measurement.database];
+      },
+      label: function (tooltipItem, data) {
+        var measurement = data.datasets[tooltipItem.datasetIndex].fullData[tooltipItem.index];
+        return [
+          "mean: " + (measurement.mean*1000).toFixed(2) + "ms",
+          "stddev: " + (measurement.stddev*1000).toFixed(2) + "ms",
+          "",
+          "iterations: " + measurement.iterations + " in " + (measurement.iterations * measurement.mean).toFixed(2) + "s",
+          "ruby version: " + measurement.ruby_version,
+          "rails version: " + measurement.rails_version,
+        ]
+      }
+    }
+  }
+};
+
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+<style>
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<a href="/">« all benchmarks</a>
+
+<h1>shipment/refresh_rates/10_shipping_methods</h1>
+
+<p>This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available</p>
+
+<canvas id="chart" width="400" height="200"></canvas>
+
+<h3>Notes</h3><ul><li>As of Solidus 1.3, taxes are calculated as part of shipping rate estimation</li></ul>
+
+<script>
+var ctx = document.getElementById("chart");
+
+var data = {"labels":["1.0.6","1.1.3","1.2.2","1.3.1","1.4.0","2.0.0","2.1.0.alpha"],"datasets":[{"label":"Mysql2","backgroundColor":"#e48e00","data":[54.072029758445034,54.43349791913415,53.79680871602989,66.93481538444757,66.13480990237899,77.4366139076077,62.62842014548369],"fullData":[{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.0.6","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.05407202975844504,"iterations":93,"stddev":0.0023624330871705925,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.1.3","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.05443349791913415,"iterations":92,"stddev":0.0030834486564756155,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.2.2","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.05379680871602989,"iterations":93,"stddev":0.0037249865045569028,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.3.1","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.06693481538444758,"iterations":75,"stddev":0.0043628549402054614,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.4.0","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"Mysql2","mean":0.066134809902379,"iterations":76,"stddev":0.0042505523688393665,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"2.0.0","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"Mysql2","mean":0.0774366139076077,"iterations":65,"stddev":0.00508166904728753,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"2.1.0.alpha","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"Mysql2","mean":0.06262842014548368,"iterations":80,"stddev":0.0043844187180287824,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]}]},{"label":"PostgreSQL","backgroundColor":"#336791","data":[51.43573899202201,51.67451530656556,49.9561878133307,69.73491352336067,69.50469718625148,75.88808597629946,62.6342601608485],"fullData":[{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.0.6","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.05143573899202201,"iterations":98,"stddev":0.002489451409711505,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.1.3","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.05167451530656556,"iterations":97,"stddev":0.0023726417752645743,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.2.2","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.0499561878133307,"iterations":101,"stddev":0.002469013039366869,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.3.1","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.06973491352336067,"iterations":72,"stddev":0.0026558097530687934,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"1.4.0","ruby_version":"2.3.1","rails_version":"4.2.7.1","database":"PostgreSQL","mean":0.06950469718625148,"iterations":72,"stddev":0.002564024342962126,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"2.0.0","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"PostgreSQL","mean":0.07588808597629947,"iterations":66,"stddev":0.003992450599906678,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]},{"label":"shipment/refresh_rates/10_shipping_methods","solidus_version":"2.1.0.alpha","ruby_version":"2.3.1","rails_version":"5.0.0.1","database":"PostgreSQL","mean":0.0626342601608485,"iterations":80,"stddev":0.004263205734826226,"description":"This benchmark measures the speed of `ShippingMethod#refresh_rates`, which estimates and creates shipping rates for a shipment. For this test there are 10 shipping methods available","notes":["As of Solidus 1.3, taxes are calculated as part of shipping rate estimation"]}]}]};
+
+var options = {
+  scales: {
+    yAxes: [{
+      display: true,
+      ticks: {
+        beginAtZero: true
+      },
+      scaleLabel: {
+        display: true,
+        labelString: "milliseconds"
+      }
+    }]
+  },
+
+  tooltips: {
+    callbacks: {
+      title: function (tooltipItem, data) {
+        var measurement = data.datasets[tooltipItem[0].datasetIndex].fullData[tooltipItem[0].index];
+        return ["Solidus " + measurement.solidus_version, measurement.database];
+      },
+      label: function (tooltipItem, data) {
+        var measurement = data.datasets[tooltipItem.datasetIndex].fullData[tooltipItem.index];
+        return [
+          "mean: " + (measurement.mean*1000).toFixed(2) + "ms",
+          "stddev: " + (measurement.stddev*1000).toFixed(2) + "ms",
+          "",
+          "iterations: " + measurement.iterations + " in " + (measurement.iterations * measurement.mean).toFixed(2) + "s",
+          "ruby version: " + measurement.ruby_version,
+          "rails version: " + measurement.rails_version,
+        ]
+      }
+    }
+  }
+};
+
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+});
+
+</script>
+
+</body>
+</html>
